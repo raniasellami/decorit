@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:pim/screens/edit_profile.dart';
 import 'package:pim/screens/forgot_password.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:pim/screens/home_page.dart';
+import 'package:pim/screens/home_screen.dart';
+import 'dart:io';
 import 'package:pim/screens/settings_page.dart';
 import 'package:pim/screens/signup.dart';
 import 'package:pim/screens/signin.dart';
@@ -33,6 +37,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+      statusBarBrightness:
+          !kIsWeb && Platform.isAndroid ? Brightness.dark : Brightness.light,
+      systemNavigationBarColor: Colors.white,
+      systemNavigationBarDividerColor: Colors.transparent,
+      systemNavigationBarIconBrightness: Brightness.dark,
+    ));
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<UserProvider>(create: (_) => UserProvider())
@@ -46,11 +59,10 @@ class MyApp extends StatelessWidget {
         initialRoute: "/",
         routes: {
           "/": (BuildContext context) {
-            return  MainPage();
+            return MainPage();
           },
           "/SignIn": (BuildContext context) {
             return const SignIn();
-
           },
           "/signup": (BuildContext context) {
             return const SignUp();
@@ -58,7 +70,6 @@ class MyApp extends StatelessWidget {
           "/MainPage": (BuildContext context) {
             return MainPage();
           },
-
           "/splashscreen": (BuildContext context) {
             return const SplahScreen();
           },
@@ -67,7 +78,10 @@ class MyApp extends StatelessWidget {
           },
           "/settings": (BuildContext context) {
             return const Settings();
-          }
+          },
+          "homescreen": (BuildContext context) {
+            return const HomeScreen();
+          },
         },
       ),
     );

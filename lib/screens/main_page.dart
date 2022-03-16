@@ -2,13 +2,19 @@ import 'dart:math' as math;
 
 import 'package:curved_bottom_navigation/curved_bottom_navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:pim/screens/design_page.dart';
 import 'package:pim/screens/edit_profile.dart';
+import 'package:pim/screens/home_screen.dart';
+import 'package:pim/screens/my_diary/my_diary_screen.dart';
+import 'package:pim/screens/my_diary/water_view.dart';
+import 'package:pim/screens/settings.dart';
 
 import './search_page.dart';
 import './favorites_page.dart';
 import './notifications_page.dart';
 import './home_page.dart';
 import './settings_page.dart';
+import 'home.dart';
 
 class MainPage extends StatefulWidget {
   static final navHeight = 68.0;
@@ -24,7 +30,8 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    final double additionalBottomPadding = math.max(MediaQuery.of(context).padding.bottom, 0.0);
+    final double additionalBottomPadding =
+        math.max(MediaQuery.of(context).padding.bottom, 0.0);
 
     return Scaffold(
       body: Stack(
@@ -39,17 +46,17 @@ class _MainPageState extends State<MainPage> {
             child: IndexedStack(
               index: navPos,
               children: [
-                SearchPage(),
-                FavoritesPage(),
+                DesignPage(),
                 HomePage(),
-                NotificationsPage(),
-                SettingsPage(),
+                EditProfile(),
               ],
             ),
           ),
           Align(
             alignment: Alignment.bottomCenter,
             child: CurvedBottomNavigation(
+              bgColor: Colors.green,
+              fabBgColor: Colors.green,
               navHeight: MainPage.navHeight,
               fabSize: MainPage.fabSize,
               fabMargin: MainPage.fabMargin,
@@ -65,27 +72,13 @@ class _MainPageState extends State<MainPage> {
                   color: Colors.white,
                 ),
                 Icon(
-                  Icons.star,
-                  color: Colors.white,
-                ),
-                Icon(
                   Icons.home,
                   color: Colors.white,
                 ),
                 Icon(
-                  Icons.notifications,
+                  Icons.settings,
                   color: Colors.white,
                 ),
-                IconButton(onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const EditProfile()),
-                  );
-                }, icon: Icon(Icons.settings,
-                  color: Colors.white,))
-
-
-
               ],
             ),
           ),
