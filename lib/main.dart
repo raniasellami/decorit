@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:pim/screens/edit_profile.dart';
 import 'package:pim/screens/forgot_password.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:pim/screens/home_page.dart';
+import 'dart:io';
 import 'package:pim/screens/settings_page.dart';
 import 'package:pim/screens/signup.dart';
 import 'package:pim/screens/signin.dart';
 import 'package:pim/screens/splashscreen.dart';
+import 'package:pim/screens/ui_view/chat.dart';
 import 'package:pim/util/user_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:pim/screens/settings.dart';
@@ -19,10 +23,11 @@ import 'package:pim/screens/main_page.dart';
 void main() {
   runApp(GetMaterialApp(
     home: MyApp(),
+
     translations: WorldLanguage(), //Language class from world_languages.dart
     locale: Locale('en', 'US'), // translations will be displayed in that locale
-    fallbackLocale: Locale('en',
-        'US'), // specify the fallback locale in case an invalid locale is selected.
+    fallbackLocale: Locale('en', 'US'),
+    // specify the fallback locale in case an invalid locale is selected.
   ));
 }
 
@@ -33,6 +38,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+      statusBarBrightness:
+          !kIsWeb && Platform.isAndroid ? Brightness.dark : Brightness.light,
+      systemNavigationBarColor: Colors.white,
+      systemNavigationBarDividerColor: Colors.transparent,
+      systemNavigationBarIconBrightness: Brightness.dark,
+    ));
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<UserProvider>(create: (_) => UserProvider())
@@ -46,11 +60,10 @@ class MyApp extends StatelessWidget {
         initialRoute: "/",
         routes: {
           "/": (BuildContext context) {
-            return  MainPage();
+            return MainPage();
           },
           "/SignIn": (BuildContext context) {
             return const SignIn();
-
           },
           "/signup": (BuildContext context) {
             return const SignUp();
@@ -58,7 +71,9 @@ class MyApp extends StatelessWidget {
           "/MainPage": (BuildContext context) {
             return MainPage();
           },
-
+          "/Chat": (BuildContext context) {
+            return const Chat();
+          },
           "/splashscreen": (BuildContext context) {
             return const SplahScreen();
           },

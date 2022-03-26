@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:pim/screens/Navbar.dart';
 import 'package:pim/screens/edit_profile.dart';
 import 'package:pim/main.dart';
 import 'package:pim/screens/signin.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'world_languages.dart';
 
 class Settings extends StatefulWidget {
@@ -14,6 +16,7 @@ class Settings extends StatefulWidget {
 }
 
 bool _iconBool = false;
+
 IconData _iconLight = Icons.wb_sunny;
 IconData _iconDark = Icons.nights_stay;
 
@@ -30,6 +33,7 @@ class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: _iconBool ? _darkTheme : _lightTheme,
       home: Scaffold(
         appBar: AppBar(
@@ -42,7 +46,7 @@ class _SettingsState extends State<Settings> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const SignIn()),
+                MaterialPageRoute(builder: (context) => const NavBar()),
               );
             },
           ),
@@ -55,37 +59,6 @@ class _SettingsState extends State<Settings> {
               },
               icon: Icon(_iconBool ? _iconDark : _iconLight),
             ),
-          ],
-        ),
-        body: Row(
-          children: [
-            Container(
-                child: IconButton(
-              icon: Image.asset('assets/icons/tn.jpeg'),
-              iconSize: 50,
-              onPressed: () {
-                var locale = Locale('ru', 'RU');
-                Get.updateLocale(locale);
-              },
-            )),
-            Container(
-                child: IconButton(
-              icon: Image.asset('assets/icons/fr.webp'),
-              iconSize: 50,
-              onPressed: () {
-                var locale = Locale('es', 'ES');
-                Get.updateLocale(locale);
-              },
-            )),
-            Container(
-                child: IconButton(
-              icon: Image.asset('assets/icons/usa.webp'),
-              iconSize: 50,
-              onPressed: () {
-                var locale = Locale('en', 'US');
-                Get.updateLocale(locale);
-              },
-            )),
           ],
         ),
       ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pim/screens/settings.dart';
 import 'package:pim/screens/signin.dart';
+import 'package:pim/screens/ui_view/chat.dart';
+import 'package:pim/screens/ui_view/languages.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -39,6 +41,12 @@ class NavBar extends StatelessWidget {
           ),
           Divider(),
           ListTile(
+            leading: Icon(Icons.image),
+            title: Text('My Designs'),
+            onTap: () => null,
+          ),
+          Divider(),
+          ListTile(
             leading: Icon(Icons.mode),
             title: Text('Mode Sombre'),
             onTap: () => {
@@ -52,13 +60,34 @@ class NavBar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.language),
             title: Text(' Language'),
-            onTap: () => null,
+            onTap: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Languages()),
+              ),
+            },
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.chat),
+            title: Text(' Chat'),
+            onTap: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Chat()),
+              ),
+            },
           ),
           Divider(),
           ListTile(
             leading: Icon(Icons.exit_to_app),
             title: Text('Exit'),
-            onTap: () => null,
+            onTap: () => {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SignIn()),
+              ),
+            },
           ),
         ],
       ),
