@@ -4,6 +4,7 @@ import 'package:curved_bottom_navigation/curved_bottom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:pim/screens/design_page.dart';
 import 'package:pim/screens/edit_profile.dart';
+import 'package:pim/screens/home_screen.dart';
 import 'package:pim/screens/ui_view/chat.dart';
 import './home_page.dart';
 
@@ -38,6 +39,7 @@ class _MainPageState extends State<MainPage> {
               index: navPos,
               children: [
                 HomePage(),
+                HomeScreen(),
                 DesignPage(),
                 Chat(),
                 EditProfile(),
@@ -61,6 +63,10 @@ class _MainPageState extends State<MainPage> {
               items: [
                 Icon(
                   Icons.home,
+                  color: Colors.white,
+                ),
+                Icon(
+                  Icons.shop_two,
                   color: Colors.white,
                 ),
                 Icon(

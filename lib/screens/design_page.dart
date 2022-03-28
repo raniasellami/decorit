@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pim/screens/home/aboutus.dart';
+//import 'package:pim/screens/home/aboutus.dart';
 
 class DesignPage extends StatefulWidget {
   const DesignPage({Key? key}) : super(key: key);
