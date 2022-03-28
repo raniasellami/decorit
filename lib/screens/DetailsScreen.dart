@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pim/screens//constatnt.dart';
 
 import 'constatnt.dart';
+
 const kPrimaryColor = Color(0xFF957E61);
 const kAccentColor = Color(0xFFEFEFEF);
 const kLightColor = Color(0xFFFCFCFC);
@@ -51,7 +52,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
               ),
             ),
             GestureDetector(
-              onTap: () => print("Add to Cart"),
+              onTap: () => print("Add to Favorite"),
               child: Container(
                 margin: EdgeInsets.symmetric(horizontal: 16.0),
                 padding: EdgeInsets.symmetric(

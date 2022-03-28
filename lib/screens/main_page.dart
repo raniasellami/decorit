@@ -4,17 +4,8 @@ import 'package:curved_bottom_navigation/curved_bottom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:pim/screens/design_page.dart';
 import 'package:pim/screens/edit_profile.dart';
-import 'package:pim/screens/home_screen.dart';
-import 'package:pim/screens/my_diary/my_diary_screen.dart';
-import 'package:pim/screens/my_diary/water_view.dart';
-import 'package:pim/screens/settings.dart';
-
-import './search_page.dart';
-import './favorites_page.dart';
-import './notifications_page.dart';
+import 'package:pim/screens/ui_view/chat.dart';
 import './home_page.dart';
-import './settings_page.dart';
-import 'home.dart';
 
 class MainPage extends StatefulWidget {
   static final navHeight = 68.0;
@@ -46,8 +37,9 @@ class _MainPageState extends State<MainPage> {
             child: IndexedStack(
               index: navPos,
               children: [
-                DesignPage(),
                 HomePage(),
+                DesignPage(),
+                Chat(),
                 EditProfile(),
               ],
             ),
@@ -68,11 +60,15 @@ class _MainPageState extends State<MainPage> {
               },
               items: [
                 Icon(
-                  Icons.search,
+                  Icons.home,
                   color: Colors.white,
                 ),
                 Icon(
-                  Icons.home,
+                  Icons.video_call_rounded,
+                  color: Colors.white,
+                ),
+                Icon(
+                  Icons.chat_rounded,
                   color: Colors.white,
                 ),
                 Icon(

@@ -6,74 +6,72 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pim/screens/constatnt.dart';
 import 'DetailsScreen.dart';
 
-
-
 class HomePage extends StatefulWidget {
   HomePage();
 
   @override
-  _HomePageState createState() =>  _HomePageState();
+  _HomePageState createState() => _HomePageState();
 }
-const kPrimaryColor = Color(0xFF957E61);
+
+const kPrimaryColor = Colors.green;
 const kAccentColor = Color(0xFFEFEFEF);
 const kLightColor = Color(0xFFFCFCFC);
 
-class  _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> {
   int currentIndex = 0;
   bool tags = false;
   List<String> categoryList = [
     "All",
-    "Chair",
-    "Sofa",
-    "Lamp",
-    "Kitchen",
-    "Table",
+    "modern",
+    "vintage",
+    "Traditional",
+    "Rustic Farmhouse",
+    "Casual",
   ];
   List popularList = [
     {
-      "image": "assets/images/chair1.jpg",
+      "image": "assets/images/5d7a1da4b32620be847b854b9b66cd32-464x410.jpg",
       "name": "Luxury Swedian Chair",
       "price": "899"
     },
     {
-      "image": "assets/images/chair2.jpg",
+      "image": "assets/images/80f01043217b5b1dd0d5eceb59c1e3b4.jpg",
       "name": "Luxury Swedian Chair",
       "price": "1299"
     },
     {
-      "image": "assets/images/chair3.jpg",
+      "image": "assets/images/01112c0066c0302e2c41d7575af45d9c.jpg",
       "name": "Luxury Swedian Chair",
       "price": "688"
     },
     {
-      "image": "assets/images/chair4.jpg",
+      "image": "assets/images/chambre-parentale-avec-mur-bleu_6015724.jpg",
       "name": "Luxury Swedian Chair",
       "price": "1488"
     },
   ];
   List bestList = [
     {
-      "image": "assets/images/chair7.jpg",
+      "image": "assets/images/Cuisine.png",
       "name": "Luxury Swedian Chair",
       "price": "899"
     },
     {
-      "image": "assets/images/chair11.png",
+      "image": "assets/images/d368f3222428502fee8b9ffa1e2f7a04.jpg",
       "name": "Luxury Swedian Chair",
       "price": "1299"
     },
     {
-      "image": "assets/images/chair8.png",
+      "image": "assets/images/lit.jpg",
       "name": "Luxury Swedian Chair",
       "price": "688"
     },
     {
-      "image": "assets/images/chair10.png",
+      "image": "assets/images/salon.png",
       "name": "Luxury Swedian Chair",
       "price": "1488"
     },
   ];
-
 
   @override
   Widget build(BuildContext context) {
@@ -132,14 +130,14 @@ class  _HomePageState extends State<HomePage> {
                   TextSpan(
                     children: [
                       TextSpan(
-                        text: "Find the \nBest",
+                        text: "GET INSIRED BY \nOUR BEST ",
                         style: TextStyle(
                           fontSize: 42.0,
                           color: kPrimaryColor,
                         ),
                       ),
                       TextSpan(
-                        text: " Furniture!",
+                        text: " DESIGNS!",
                         style: TextStyle(
                           fontSize: 42.0,
                           color: kPrimaryColor,
@@ -208,7 +206,7 @@ class  _HomePageState extends State<HomePage> {
                   child: Row(
                     children: List.generate(
                       categoryList.length,
-                          (index) => Padding(
+                      (index) => Padding(
                         padding: const EdgeInsets.only(right: 32.0),
                         child: GestureDetector(
                           onTap: () => setState(() {
@@ -321,15 +319,15 @@ class  _HomePageState extends State<HomePage> {
                             ),
                             Padding(
                               padding:
-                              const EdgeInsets.symmetric(vertical: 6.0),
+                                  const EdgeInsets.symmetric(vertical: 6.0),
                               child: Row(
                                 mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                     children: List.generate(
                                       5,
-                                          (index) => Icon(
+                                      (index) => Icon(
                                         Icons.star,
                                         color: Colors.amber,
                                       ),
@@ -434,15 +432,15 @@ class  _HomePageState extends State<HomePage> {
                             ),
                             Padding(
                               padding:
-                              const EdgeInsets.symmetric(vertical: 6.0),
+                                  const EdgeInsets.symmetric(vertical: 6.0),
                               child: Row(
                                 mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                     children: List.generate(
                                       5,
-                                          (index) => Icon(
+                                      (index) => Icon(
                                         Icons.star,
                                         color: Colors.amber,
                                       ),
@@ -473,7 +471,3 @@ class  _HomePageState extends State<HomePage> {
     );
   }
 }
-
-
-
-
