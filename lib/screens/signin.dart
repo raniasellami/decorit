@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pim/screens/forgot_password.dart';
 import 'package:pim/screens/home.dart';
+import 'package:pim/screens/main_page.dart';
 import 'package:pim/screens/signup.dart';
 import 'package:pim/util/user_provider.dart';
 import 'package:provider/provider.dart';
@@ -82,7 +83,7 @@ class _SignInState extends State<SignIn> {
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 prefixIcon: Icon(Icons.email),
-                                labelText: ("email1".tr),
+                                labelText: ("email".tr),
                               ),
                               onSaved: (String? value) {
                                 _email = value.toString();
@@ -162,7 +163,7 @@ class _SignInState extends State<SignIn> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => const SignUp()),
+                                          builder: (context) => MainPage()),
                                     );
                                   } else if (response.statusCode == 401) {
                                     showDialog(

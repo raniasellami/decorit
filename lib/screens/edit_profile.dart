@@ -5,6 +5,7 @@ import 'package:pim/screens/settings.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'Navbar.dart';
+import 'package:pim/screens/settings.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({Key? key}) : super(key: key);

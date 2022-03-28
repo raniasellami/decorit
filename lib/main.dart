@@ -5,12 +5,16 @@ import 'package:pim/screens/edit_profile.dart';
 import 'package:pim/screens/forgot_password.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:pim/screens/home_page.dart';
+
+
 import 'package:pim/screens/home_screen.dart';
+
 import 'dart:io';
 import 'package:pim/screens/settings_page.dart';
 import 'package:pim/screens/signup.dart';
 import 'package:pim/screens/signin.dart';
 import 'package:pim/screens/splashscreen.dart';
+import 'package:pim/screens/ui_view/chat.dart';
 import 'package:pim/util/user_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:pim/screens/settings.dart';
@@ -23,10 +27,11 @@ import 'package:pim/screens/main_page.dart';
 void main() {
   runApp(GetMaterialApp(
     home: MyApp(),
+
     translations: WorldLanguage(), //Language class from world_languages.dart
     locale: Locale('en', 'US'), // translations will be displayed in that locale
-    fallbackLocale: Locale('en',
-        'US'), // specify the fallback locale in case an invalid locale is selected.
+    fallbackLocale: Locale('en', 'US'),
+    // specify the fallback locale in case an invalid locale is selected.
   ));
 }
 
@@ -70,6 +75,12 @@ class MyApp extends StatelessWidget {
           "/MainPage": (BuildContext context) {
             return MainPage();
           },
+
+          "/Chat": (BuildContext context) {
+            return const Chat();
+          },
+
+
           "/splashscreen": (BuildContext context) {
             return const SplahScreen();
           },
