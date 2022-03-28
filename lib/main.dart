@@ -5,6 +5,10 @@ import 'package:pim/screens/edit_profile.dart';
 import 'package:pim/screens/forgot_password.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:pim/screens/home_page.dart';
+
+
+import 'package:pim/screens/home_screen.dart';
+
 import 'dart:io';
 import 'package:pim/screens/settings_page.dart';
 import 'package:pim/screens/signup.dart';
@@ -71,9 +75,12 @@ class MyApp extends StatelessWidget {
           "/MainPage": (BuildContext context) {
             return MainPage();
           },
+
           "/Chat": (BuildContext context) {
             return const Chat();
           },
+
+
           "/splashscreen": (BuildContext context) {
             return const SplahScreen();
           },
@@ -82,7 +89,10 @@ class MyApp extends StatelessWidget {
           },
           "/settings": (BuildContext context) {
             return const Settings();
-          }
+          },
+          "homescreen": (BuildContext context) {
+            return const HomeScreen();
+          },
         },
       ),
     );
