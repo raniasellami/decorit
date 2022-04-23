@@ -1,0 +1,15 @@
+{
+  "test": "hi",
+  "home_title": "Eat what makes you happy",
+  "search_home": "Find your food",
+  "special_home": "Seasonal Special",
+  "see_all": "See all",
+  "my_orders": "My orders",
+  "edit_profile": "Edit Profile",
+  "language_change": "Change language",
+  "about_us": "About us",
+  "log_out": "Log out",
+  "cart": "Cart",
+  "total": "Total",
+  "order_confirm": "Confirm Order"
+}
